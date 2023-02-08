@@ -19,7 +19,7 @@ const ToDo = () => {
            
           })
           console.log(toDoList);
-        fetch('https://assets.breatheco.de/apis/fake/todos/user/male', {
+        fetch('https://assets.breatheco.de/apis/fake/todos/user/alesanchezr', {
             method: "PUT",
             body: JSON.stringify(toDoList),
             headers: {
@@ -27,14 +27,13 @@ const ToDo = () => {
             }
         })
             .then(response => response.text())
-            .then(result => console.log(result))
-            .catch(error => console.log('error', error));
+            
 
     };
 
-    const handleDelete = (i) => {
+    const handleDelete = (e) => {
         setTask(task.filter((_, index)=>{
-            return index != i
+            return index != e
           })
           )
     }
